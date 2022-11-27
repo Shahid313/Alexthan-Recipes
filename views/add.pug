@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple login form</title>
+    link(href='style.css' rel='stylesheet')
+  </head>
+  <body>
+    <form method="POST" action="http://localhost:5000/store">
+      <h1>Add Recipe</h1>
+      <div class="formcontainer">
+      <hr/>
+      <div class="container">
+        <label for="rname"><strong>Name</strong></label>
+        <input type="text" placeholder="Enter recipe name" name="rname" required>
+        
+        <label for="rdescription"><strong>Description</strong></label>
+        <input type="text" placeholder="Enter recipe description" name="rdescription" required>
+
+        <label for="rdifficulty"><strong>Difficulty</strong></label>
+        <input type="text" placeholder="Enter recipe difficulty" name="rdifficulty" required>
+
+        <label for="ingredients"><strong>Ingredients</strong></label>
+        
+        <div id="ingredientDiv"></div>
+        <div id="addIngredientField">
+            <p class="plus">+</p>
+        </div>
+
+        <label for="steps"><strong>Steps</strong></label>
+        
+        <div id="stepsDiv"></div>
+        <div id="addStepsField">
+            <p class="plus">+</p>
+        </div>
+
+      </div>
+      <button type="submit">Add</button>
+    </form>
+    <script src="main.js">
+        
+    </script>
+  </body>
+</html>

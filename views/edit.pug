@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple login form</title>
+    link(href='/style.css' type="text/css" rel='stylesheet')
+  </head>
+  <body>
+    <form method="POST" action="/update/#{recipe._id}">
+      <h1>Update Recipe</h1>
+      <div class="formcontainer">
+      <hr/>
+      <div class="container">
+        <label for="rname"><strong>Name</strong></label>
+        <input type="text" placeholder="Enter recipe name" name="rname" value="#{recipe.name}" required>
+        
+        <label for="rdescription"><strong>Description</strong></label>
+        <input type="text" placeholder="Enter recipe description" name="rdescription" value="#{recipe.description}" required>
+
+        <label for="rdifficulty"><strong>Difficulty</strong></label>
+        <input type="text" placeholder="Enter recipe difficulty" name="rdifficulty" value="#{recipe.difficulty}" required>
+
+        <label for="ingredients"><strong>Ingredients</strong></label>
+        each ingredient in recipe.ingredients
+            <input type="text" placeholder="Enter ingredient" name="ingredients" value="#{ingredient}" required>
+        
+        <div id="ingredientDiv"></div>
+        <div id="addIngredientField">
+            <p class="plus">+</p>
+        </div>
+
+        <label for="steps"><strong>Steps</strong></label>
+        each step in recipe.steps
+            <input type="text" placeholder="Enter ingredient" name="steps" value="#{step}" required>
+        
+        <div id="stepsDiv"></div>
+        <div id="addStepsField">
+            <p class="plus">+</p>
+        </div>
+
+      </div>
+      <button type="submit">Update</button>
+    </form>
+    <script src="/main.js">
+        
+    </script>
+  </body>
+</html>

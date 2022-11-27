@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Recipes</title>
+        link(href='bootstrap.min.css' rel='stylesheet')
+    </head>
+
+    <body>
+<h1 class="text-center text-success my-3">Recipes</h1>
+<a href="/add" class="btn btn-sm btn-success text-center mb-2 ml-4">Add new recipe</a>
+        <table class="table">
+<thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Diffculty</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Steps</th>
+      <th scope="col">Actions</th>
+    </tr>
+</thead>
+  <tbody>
+  each recipe in recipes
+    <tr>
+      <td>#{recipe.name}</td>
+      <td>#{recipe.description}</td>
+      <td>#{recipe.difficulty}</td>
+      
+        <td>
+        each ingredient in recipe.ingredients
+            <p>#{ingredient}</p>
+        </td>
+        <td>
+        each step in recipe.steps
+            <p>#{step}</p>
+        </td>
+      <td>
+      <a href="/edit/#{recipe._id}" class="btn btn-sm btn-success">Edit</a>
+      <a href="/delete/#{recipe._id}" class="btn btn-sm btn-danger">Delete</a>
+      </td>
+    </tr>
+    
+</tbody>
+</table>
+    </body>
+</html>
